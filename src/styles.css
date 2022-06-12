@@ -1,0 +1,7 @@
+* {
+  font-family: 'Arial', cursive !important;
+}
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(255,235,205,1) 0%, rgba(255,235,205,1) 35%, rgba(255,235,205,1) 100%);
+}

@@ -1,0 +1,51 @@
+<div class="container-fluid wrapper">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-dark mb-3 sign-up-card">
+        <div class="card-header text-white">Sign Up</div>
+        <div class="card-body">
+          <form [formGroup]="form" action="#">
+            <div class="form-floating mb-3">
+              <input type="text" required class="form-control" id="firstName" formControlName="firstName"  placeholder="First Name">
+              <label for="firstName">First Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" required class="form-control" id="lastName" formControlName="lastName" placeholder="Last Name">
+              <label for="lastName">Last Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" formControlName="email"  placeholder="Email">
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" required class="form-control" id="password" formControlName="password"  placeholder="Password">
+              <label for="password">Password</label>
+            </div>
+
+            <div class="form-floating mb-3" >
+              <select class="form-select" required id="sex" formControlName="sex">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <label for="sex">Sex</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="date" required class="form-control" formControlName="birthDate" id="birth_date">
+              <label for="birth_date">Your Birth Date</label>
+            </div>
+
+            <div class="card-footer text-end">
+              <button
+                      (click)="onSubmit()"
+                      type="submit"
+                      id="sign_up_btn"
+                      class="btn btn-primary sign-up-btn">Sign up</button>
+            </div>
+            <a id="redirectLink" href="../../main/index.html"></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

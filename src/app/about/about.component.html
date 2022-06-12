@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img src="../../assets/logo.png"
+                                 alt="png"
+                                 width="25"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a type="button"
+           href="../todo-main/index.html"
+           id="go-to-todo-main-btn"
+           class="btn btn-primary link-btn">Work page</a>
+        <a class="nav-link">About Us</a>
+        <a type="button"
+           href="../profile/index.html"
+           id="go-to-profile-btn"
+           class="btn btn-primary link-btn">Profile</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid wrapper">
+  <div class="card bg-secondary mb-3 about-app-card">
+    <div class="card-header bg-secondary text-white text-center"><h5>ABOUT APP</h5></div>
+    <div class="card-body bg-secondary">
+      <div class="row">
+        <div class="col text-white">
+          <div class="logo"></div>
+          <p> PHONE DIRECTORY - is an app that gives you access to a list of your phone numbers.</p>
+          <p>The user can register on the site, he will have his own profile.</p>
+          <p>The user can:</p>
+          <br>
+          <ul>
+            <li>add new phone numbers</li>
+            <li>delete phone numbers</li>
+            <li>sort numbers</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="redirectToMain()" class="btn btn-primary">Back</button>
+</div>

@@ -1,0 +1,25 @@
+<div class="container wrapper">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-dark mb-3 log-in-card">
+        <div class="card-header text-white">Log In</div>
+        <div class="card-body">
+          <form action="#" [formGroup]="form">
+            <div class="form-floating mb-3">
+              <input type="email" formControlName="email" class="form-control" id="email"  placeholder="Email">
+              <label for="email">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" formControlName="password" class="form-control" id="password"  placeholder="Password">
+              <label for="password">Password</label>
+            </div>
+            <div class="card-footer text-end">
+              <button (click)="onSubmit()" type="submit" id="sign_in_btn" class="btn btn-primary log-in-btn">Log In</button>
+            </div>
+            <a id="redirectLink" href="../../main/index.html"></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

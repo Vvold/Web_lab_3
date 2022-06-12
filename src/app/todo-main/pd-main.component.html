@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img src="../../assets/logo.png"
+                                 alt="png"
+                                 width="25"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link">Work Page</a>
+        <a type="button"
+           href="../about/index.html"
+           id="go-to-about-app-btn"
+           class="btn btn-primary link-btn">About App</a>
+        <a type="button"
+           href="../profile/index.html"
+           id="go-to-profile-btn"
+           class="btn btn-primary link-btn">Profile</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid wrapper">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-dark mb-3 todo-card">
+        <div class="row card-header text-white text-center">
+          <div class="col">
+          </div>
+          <div class="col h1">Phone Directory</div>
+          <div class="col">
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="text-center">
+            <button type="button"
+                    (click)="openModal(modal)"
+                    id="add-todo-btn"
+                    class="btn btn-primary add-todo-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#add_todo_item_modal">
+              Add number
+            </button>
+            <button id="sortByName" class="btn-sort">Sort by name</button>
+
+          </div>
+          <div id="todos-container" *ngIf="pds.length">
+            <div *ngFor="let todo of pds" class="todo-item text-white">
+              <h5 class="text-center text-white">{{todo.date}}</h5>
+              <p>{{ todo.description}}</p>
+              <div class="actions">
+                <button type="button"
+                        data-todo-id="${id}"
+                        class="btn-close btn-close-white remove-todo-btn"
+                        (click)="onRemovePD(todo.id)"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modal class="modal fade" id="add_todo_item_modal" tabindex="-1" aria-labelledby="add_todo_item_modal" aria-hidden="true">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add_todo_item_modal_label">Add phone</h5>
+        <button (click)="closeModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/" [formGroup]="form">
+          <div class="mb-3">
+            <label for="todo-text-input" class="form-label">Name</label>
+            <input class="form-control" formControlName="description" required id="todo-text-input">
+          </div>
+
+          <div class="mb-3">
+            <label for="date_to">Number</label>
+            <input type="text" formControlName="date" class="form-control" id="date_to">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button (click)="closeModal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button (click)="onAddPD()" type="button" class="btn btn-primary btn-dark" data-bs-dismiss="modal" id="save-todo-btn">Save</button>
+      </div>
+</ng-template>
